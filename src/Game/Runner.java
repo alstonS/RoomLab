@@ -3,6 +3,7 @@ package Game;
 import People.Person;
 import Rooms.Room;
 import Rooms.WinningRoom;
+import Rooms.ScaryRoom;
 
 import java.util.Scanner;
 
@@ -28,7 +29,12 @@ public class Runner {
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
-		 
+		int j = (int)(Math.random()*building.length);
+		int k = (int)(Math.random()*building.length);
+		building[j][k] = new ScaryRoom(j,k);
+
+		System.out.println(x);System.out.println(y);System.out.println(j);System.out.println(k);
+
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
